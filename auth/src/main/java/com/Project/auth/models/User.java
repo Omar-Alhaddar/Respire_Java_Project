@@ -10,12 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name="users")
@@ -25,6 +27,8 @@ public class User {
 	    private Long id;
 	  @Size(min=3, message="Username must be greater than 3 characters")
 	    private String username;
+	  @Email(message="Email must be valid")
+	  private String email;
 	  @Size(min=5, message="Password must be greater than 5 characters")
 	    private String password;
 	    @Transient
@@ -32,6 +36,35 @@ public class User {
 	    @Column(updatable=false)
 	    private Date createdAt;
 	    private Date updatedAt;
+//	    n:m relationship with Events
+	    @ManyToMany(fetch = FetchType.LAZY)
+	    @JoinTable(
+	        name = "users_events", 
+	        joinColumns = @JoinColumn(name = "user_id"), 
+	        inverseJoinColumns = @JoinColumn(name = "event_id")
+	    )
+	    private List<Event> events;
+	    
+//	    n:m relationship with Trip
+	    @ManyToMany(fetch = FetchType.LAZY)
+	    @JoinTable(
+	        name = "users_trips", 
+	        joinColumns = @JoinColumn(name = "user_id"), 
+	        inverseJoinColumns = @JoinColumn(name = "trip_id")
+	    )
+	    private List<Trip> trips;
+	    
+//	    1:m relationship with event
+	    @OneToMany(mappedBy="host",fetch=FetchType.LAZY)
+	    private List<Event> hosted_events;
+	    
+	    
+	    //1:m relationship with trip
+	    @OneToMany(mappedBy="host",fetch=FetchType.LAZY)
+	    private List<Trip> hosted_trips;
+
+	    
+//	    **************
 	    @ManyToMany(fetch = FetchType.EAGER)
 	    @JoinTable(
 	        name = "users_roles", 

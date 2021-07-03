@@ -74,7 +74,59 @@ public class User {
 	    
 	    public User() {
 	    }
-	    public Long getId() {
+	    
+	    
+	    public String getEmail() {
+			return email;
+		}
+
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+
+		public List<Event> getEvents() {
+			return events;
+		}
+
+
+		public void setEvents(List<Event> events) {
+			this.events = events;
+		}
+
+
+		public List<Trip> getTrips() {
+			return trips;
+		}
+
+
+		public void setTrips(List<Trip> trips) {
+			this.trips = trips;
+		}
+
+
+		public List<Event> getHosted_events() {
+			return hosted_events;
+		}
+
+
+		public void setHosted_events(List<Event> hosted_events) {
+			this.hosted_events = hosted_events;
+		}
+
+
+		public List<Trip> getHosted_trips() {
+			return hosted_trips;
+		}
+
+
+		public void setHosted_trips(List<Trip> hosted_trips) {
+			this.hosted_trips = hosted_trips;
+		}
+
+
+		public Long getId() {
 	        return id;
 	    }
 	    public void setId(Long id) {

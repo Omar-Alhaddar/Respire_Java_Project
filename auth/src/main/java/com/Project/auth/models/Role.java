@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name="roles")
@@ -15,13 +16,25 @@ public class Role {
     @GeneratedValue
     private Long id;
     private String name;
+    private String email;
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
     
     public Role() {
     }
     
-    public Long getId() {
+    
+    public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public Long getId() {
         return id;
     }
     public void setId(Long id) {

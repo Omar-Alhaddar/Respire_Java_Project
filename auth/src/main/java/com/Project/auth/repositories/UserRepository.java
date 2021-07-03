@@ -8,4 +8,6 @@ import com.Project.auth.models.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>  {
 	User findByUsername(String username);
+	User findByEmail(String email);
+	 
 }

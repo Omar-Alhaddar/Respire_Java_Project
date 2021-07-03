@@ -34,6 +34,19 @@ public class Users {
     public String registerForm(@Valid @ModelAttribute("user") User user) {
         return "registrationPage.jsp";
     }
+//	@RequestMapping(value={"/login","/register"})
+//    public String login(Model model,@RequestParam(value="error",required=false) String error,@RequestParam(value="logout",required=false) String logout){
+//        if(error != null){model.addAttribute("errorMessage","Invalid Credentials.");}
+//        if(logout != null){model.addAttribute("logoutMessage","Logout Successful");}
+//
+//        model.addAttribute("user",new User());
+//        return "loginRegister.jsp";
+//    }
+	
+	
+	
+	
+	
 	
 	 @PostMapping("/registration")
 	    public String registration(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {

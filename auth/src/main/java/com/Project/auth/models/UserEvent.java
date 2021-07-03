@@ -29,5 +29,48 @@ public class UserEvent {
 	    @ManyToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name="event_id")
 	    private Event event;
+
+		public UserEvent() {
+		}
+
+		public Long getId() {
+			return id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Date getCreatedAt() {
+			return createdAt;
+		}
+
+		public void setCreatedAt(Date createdAt) {
+			this.createdAt = createdAt;
+		}
+
+		public Date getUpdatedAt() {
+			return updatedAt;
+		}
+
+		public void setUpdatedAt(Date updatedAt) {
+			this.updatedAt = updatedAt;
+		}
+
+		public User getUser() {
+			return user;
+		}
+
+		public void setUser(User user) {
+			this.user = user;
+		}
+
+		public Event getEvent() {
+			return event;
+		}
+
+		public void setEvent(Event event) {
+			this.event = event;
+		}
 	    
 }

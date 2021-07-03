@@ -75,7 +75,7 @@ public class Users {
 	        if(logout != null) {
 	            model.addAttribute("logoutMessage", "Logout Successful!");
 	        }
-	        return "loginPage.jsp";
+	        return "redirect:/registration";
 	    }
     @RequestMapping(value = {"/", "/home"})
     public String home(Principal principal, Model model) {

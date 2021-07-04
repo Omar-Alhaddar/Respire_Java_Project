@@ -41,6 +41,8 @@
                                     <input type="submit" value="Approve"/>
                                     <input type="submit" value="Decline"/>
                                 </div>
+                                                                </div>
+                                
                                 </c:forEach>
                         </div>
                         <div class="cta-inner bg-faded text-center rounded">

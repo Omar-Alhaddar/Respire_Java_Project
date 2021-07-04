@@ -64,7 +64,7 @@ public class Users {
 	 @RequestMapping("/admin")
 	    public String adminPage(Principal principal, Model model,HttpSession session) {
 	        String username = principal.getName();
-//	        model.addAttribute("currentUser", userService.findByUsername(username));
+        model.addAttribute("currentUser", userService.findByUsername(username));
 	      
 	        List<Event> events = eventSer.findAllEvents();
 	        model.addAttribute("events", events);
@@ -139,7 +139,7 @@ public class Users {
 		model.addAttribute("user", user);
 		model.addAttribute("attendees", event.getUsers());
 		
-		return "details.jsp";
+		return "ShowEvent.jsp";
 	}
   
 }

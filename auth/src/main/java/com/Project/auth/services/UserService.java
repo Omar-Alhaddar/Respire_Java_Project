@@ -1,5 +1,7 @@
 package com.Project.auth.services;
 
+import java.util.Optional;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,15 @@ public class UserService {
 	    // 3
 	    public User findByUsername(String username) {
 	        return userRepository.findByUsername(username);
+	    }
+	    
+	    public User findUserById(Long id) {
+	    	Optional<User> u =userRepository.findById(id);
+	    	
+	    	if(u.isPresent()) {
+	            return u.get();
+	    	} else {
+	    	    return null;
+	    	}
 	    }
 }

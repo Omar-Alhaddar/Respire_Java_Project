@@ -69,18 +69,19 @@ public class Trip {
 //    *********************
     
     
-   
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
     public Trip() {
 }
     
 	public String getCity() {
 		return city;
 	}
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
 	public Long getId() {
 		return id;
 	}
@@ -151,8 +152,4 @@ public class Trip {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
-	 @PrePersist
-	    protected void onCreate(){
-	        this.createdAt = new Date();
-	    }
 }

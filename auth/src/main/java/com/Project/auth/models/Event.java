@@ -39,7 +39,7 @@ public class Event {
 	@Size(min = 5, max = 200)
     private String description;
 	@NotNull
-	@Min(10)
+	@Min(30)
     private Double price;
 	@NotNull
 	@Min(10)
@@ -47,6 +47,7 @@ public class Event {
     @Future
 	@DateTimeFormat(pattern="yyyy-MM-dd")  
     private Date date;
+    @NotNull
     private String img;
     @Column(updatable=false)
     private Date createdAt;
@@ -87,6 +88,22 @@ public class Event {
 	this.users = users;
 	this.host = host;
 }
+
+
+
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 
 
 

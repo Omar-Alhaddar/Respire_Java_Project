@@ -13,7 +13,7 @@
 </head>
  <body>
 <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-<div class="container" id="container">
+<div class="container" id="container" style="min-height: 720px;">
 	<div class="form-container sign-up-container">
 		<form:form method="POST" action="/registration" modelAttribute="user">
 			<h1>Create Account</h1>
@@ -75,14 +75,7 @@
 	</div>
 </div>
 
-<footer>
-	<p>
-		Created with <i class="fa fa-heart"></i> by
-		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-		- Read how I created this and how you can join the challenge
-		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-	</p>
-</footer>
+
 <script type="text/javascript" src="js/app.js"></script>
 </body> 
 

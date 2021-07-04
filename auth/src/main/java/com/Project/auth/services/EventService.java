@@ -42,4 +42,5 @@ public void unJoinEvent(User user,Event event) {
 	users.remove(user);
 	eveRepo.save(event);
 }
+
 }

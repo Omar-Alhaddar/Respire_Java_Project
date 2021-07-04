@@ -6,12 +6,15 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Project.auth.models.Event;
@@ -52,8 +55,8 @@ public class Users {
 	        if (result.hasErrors()) {
 	            return "registrationPage.jsp";
 	        }
-        userService.saveUserWithAdminRole(user);
-//	        userService.saveWithUserRole(user);
+//        userService.saveUserWithAdminRole(user);
+        userService.saveWithUserRole(user);
 	        return "redirect:/login";
 	    }
 	 @RequestMapping("/admin")
@@ -82,6 +85,8 @@ public class Users {
 	    }
     @RequestMapping(value = {"/", "/home"})
     public String home(Principal principal, Model model) {
+    	if(principal==null)
+    		return "homePage.jsp";
         // 1
         String username = principal.getName();
         model.addAttribute("currentUser", userService.findByUsername(username));
@@ -93,4 +98,23 @@ public class Users {
   public String tripForm(@ModelAttribute("trip")Trip trip) {
     return "createtrip.jsp";
   }
+  @RequestMapping(value = "/createTrip", method = RequestMethod.POST)
+	public String createTrip(@Valid @ModelAttribute("trip") Trip trip, BindingResult result, Model model) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails) {
+			String username = ((UserDetails) principal).getUsername();
+			model.addAttribute("username", username);
+
+		}
+		if (result.hasErrors()) {
+			System.out.println(result.getAllErrors());
+			System.out.println("loas;daskdask");
+			return "createtrip.jsp";
+
+		}
+
+		tripSer.creatTrip(trip);
+		return "redirect:/trips";
+	}
 }

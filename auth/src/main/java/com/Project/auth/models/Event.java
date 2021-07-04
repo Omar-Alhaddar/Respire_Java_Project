@@ -70,7 +70,27 @@ public class Event {
 	
 	
 	
-    public Long getId() {
+	
+	
+    public Event(@NotNull @Size(min = 5, max = 100) String name, @NotNull @Size(min = 5, max = 200) String description,
+		@NotNull @Min(30) Double price, @NotNull @Min(10) Integer capacity, @Future Date date, @NotNull String img,
+		List<User> users, User host) {
+	super();
+	this.name = name;
+	this.description = description;
+	this.price = price;
+	this.capacity = capacity;
+	this.date = date;
+	this.img = img;
+	this.users = users;
+	this.host = host;
+}
+
+
+
+
+
+	public Long getId() {
 		return id;
 	}
 

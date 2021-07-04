@@ -5,6 +5,7 @@ import java.security.Principal;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,13 +14,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Project.auth.models.Trip;
 import com.Project.auth.models.User;
+import com.Project.auth.services.EventService;
+import com.Project.auth.services.TripService;
 import com.Project.auth.services.UserService;
 import com.Project.auth.validator.UserValidator;
 
 @Controller
 public class Users {
-	
+	@Autowired
+	private TripService tripSer;
+	@Autowired
+	private EventService eventSer;
 	 private UserService userService;
 	 private UserValidator userValidator;
 	    
@@ -34,18 +41,6 @@ public class Users {
     public String registerForm(@Valid @ModelAttribute("user") User user) {
         return "registrationPage.jsp";
     }
-//	@RequestMapping(value={"/login","/register"})
-//    public String login(Model model,@RequestParam(value="error",required=false) String error,@RequestParam(value="logout",required=false) String logout){
-//        if(error != null){model.addAttribute("errorMessage","Invalid Credentials.");}
-//        if(logout != null){model.addAttribute("logoutMessage","Logout Successful");}
-//
-//        model.addAttribute("user",new User());
-//        return "loginRegister.jsp";
-//    }
-	
-	
-	
-	
 	
 	
 	 @PostMapping("/registration")
@@ -84,4 +79,10 @@ public class Users {
         model.addAttribute("currentUser", userService.findByUsername(username));
         return "homePage.jsp";
     }
+//    ******** Trip form ***********
+
+  @RequestMapping("/trips")  
+  public String tripForm(@ModelAttribute("trip")Trip trip) {
+    return "createtrip.jsp";
+  }
 }

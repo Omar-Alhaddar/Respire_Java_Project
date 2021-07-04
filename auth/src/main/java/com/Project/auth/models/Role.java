@@ -16,23 +16,12 @@ public class Role {
     @GeneratedValue
     private Long id;
     private String name;
-    private String email;
+ 
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
     
     public Role() {
     }
-    
-    
-    public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 
 	public Long getId() {
         return id;

@@ -12,7 +12,6 @@ pageEncoding="UTF-8"%>
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style1.css">
-     
 </head>
 <body>
 <div class="nav">
@@ -33,7 +32,7 @@ pageEncoding="UTF-8"%>
           <div class="form">
             <%--  <p><form:errors path="user.*"/></p> --%>
                     <form:form class="sign-back" method="POST" action="/createTrip" modelAttribute="trip">
-                    <form:hidden value = "${username}" path="host" />  
+                   <%--  <form:hidden value = "${userId.id} " path="host" />    --%> 
                     <h1>Create your Trip</h1>
             <div class="group">      
                 <p>
@@ -66,28 +65,12 @@ pageEncoding="UTF-8"%>
             </div>
             <div class="group">      
                 <p>
-                    <%-- <form:label path="price">The Price:</form:label> --%>
-                    <form:input type="text" path="city" placeholder="city"/>
-                </p>
-              <span class="highlight"></span>
-            </div>
-             <div class="group">      
-                <p>
-                    <%-- <form:label path="price">The Price:</form:label> --%>
-                    <form:input type="date" path="date" placeholder="city"/> 
-                </p>
-              <span class="highlight"></span>
-            </div>
-            <div class="group">      
-                <p>
                    <%--  <form:label path="img">Download a photo:</form:label> --%>
-                    <form:input type="file" path="img" placeholder="Download a photo:"/> 
+                    <form:input type="file" path="img" placeholder="Download a photo:"/>
                 </p>
               <span class="highlight"></span>
             </div>
-            
-             <input type="submit" value="Login!"/>
-<!-- <button class="send-btn" type="submit">Enjoy your own trip</button> -->
+<button class="send-btn" type="submit">Enjoy your own trip</button>
 </form:form>  
           </div>
         </div>

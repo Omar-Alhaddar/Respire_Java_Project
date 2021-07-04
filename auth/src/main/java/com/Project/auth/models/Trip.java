@@ -35,13 +35,10 @@ public class Trip {
 	@Size(min = 5, max = 100)
     private String name;
 	@NotNull
-	@Size(min = 5, max = 100)
-    private String city;
-	@NotNull
 	@Size(min = 5, max = 200)
     private String description;
 	@NotNull
-	@Min(10)
+	@Min(30)
     private Double price;
 	@NotNull
 	@Min(10)
@@ -49,6 +46,7 @@ public class Trip {
     @Future
 	@DateTimeFormat(pattern="yyyy-MM-dd")  
     private Date date;
+    @NotNull
     private String img;
     @Column(updatable=false)
     private Date createdAt;
@@ -76,12 +74,6 @@ public class Trip {
     public Trip() {
 }
     
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
 	public Long getId() {
 		return id;
 	}

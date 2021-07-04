@@ -33,9 +33,6 @@ public class Event {
 	@Size(min = 5, max = 100)
     private String name;
 	@NotNull
-	@Size(min = 5, max = 100)
-    private String city;
-	@NotNull
 	@Size(min = 5, max = 200)
     private String description;
 	@NotNull
@@ -88,22 +85,6 @@ public class Event {
 	this.users = users;
 	this.host = host;
 }
-
-
-
-
-
-	public String getCity() {
-		return city;
-	}
-
-
-
-
-
-	public void setCity(String city) {
-		this.city = city;
-	}
 
 
 

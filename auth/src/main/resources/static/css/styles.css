@@ -208,7 +208,11 @@ sup {
 }
 
 a {
+<<<<<<< HEAD
   color: #333333;
+=======
+  color: #e6a756;
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
   text-decoration: underline;
 }
 a:hover {
@@ -642,6 +646,7 @@ progress {
   margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) * -.5);
   margin-left: calc(var(--bs-gutter-x) * -.5);
+<<<<<<< HEAD
   	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
@@ -649,6 +654,10 @@ progress {
 .row > * {
   display: flex;
   justify-content: space-evenly;
+=======
+}
+.row > * {
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
@@ -10857,7 +10866,11 @@ textarea.form-control-lg {
   }
 }
 body {
+<<<<<<< HEAD
 background-color: #f6f5f7;
+=======
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/bg.jpg");
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -10901,6 +10914,7 @@ p {
   display: block;
   font-size: 1rem;
   font-weight: 800;
+<<<<<<< HEAD
 width: 350px;
 }
 .requests{
@@ -10911,17 +10925,27 @@ width: 350px;
 .requests input{
   background-color: #212529;
   color: #f6e1c6 ;
+=======
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
 }
 .section-heading .section-heading-lower {
   display: block;
   font-size: 3rem;
   font-weight: 100;
+<<<<<<< HEAD
   
 }
 
 .bg-faded {
   background-color: #f6e1c5;
 }
+=======
+}
+
+.bg-faded {
+  background-image:linear-gradient(#1b2229,white)
+;}
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
 
 .btn-xl {
   font-weight: 700;
@@ -10977,11 +11001,15 @@ width: 350px;
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
+<<<<<<< HEAD
   /* background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)); */
   background-image: linear-gradient(to bottom right, #e62e62, #212529, #2615ca);
   	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
+=======
+  background-color: rgba(230, 167, 86, 0.9);
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
 }
 .cta .cta-inner {
   position: relative;
@@ -11136,7 +11164,10 @@ h1 {
   width: 100%;
   height: 100%;
   background: var(--container-bg-color);
+<<<<<<< HEAD
  
+=======
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
 }
 
 .split {
@@ -11217,9 +11248,12 @@ h1 {
   .button {
     top: 70%;
   }
+<<<<<<< HEAD
 }
 
 
 #logoutForm input{
 	
+=======
+>>>>>>> 00f8bb2f090ead91cd433b5963b65ed4ffffd9eb
 }

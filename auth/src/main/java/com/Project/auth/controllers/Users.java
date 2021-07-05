@@ -97,14 +97,8 @@ public class Users {
     }
 //    ******** Trip form ***********
 
-//  @RequestMapping("/trips")  
-//  public String tripForm(@ModelAttribute("trip")Trip trip) {
-//    return "createtrip.jsp";
-//  }
-  @RequestMapping("/trips")  
 
-  public String tripForm(@ModelAttribute("trip")Trip trip) {
-    return "trips.jsp";}
+  @RequestMapping("/trips")  
   public String test(@ModelAttribute("trip")Trip trip) {
     return "test.jsp";
   }
@@ -179,11 +173,17 @@ public String eventForm(@ModelAttribute("event")Event event) {
 		return "ShowEvent.jsp";
 	}
 	
-	@RequestMapping("/showtrips")
-		public String showtrips(Model model) {
+	@RequestMapping("/showevents")
+		public String showevents(Model model) {
 		List<Event> eventList = eventSer.findAllEvents();
 		model.addAttribute("events", eventList);
-		return "tripsh.jsp";
+		return "eventsh.jsp";
 	}
-  
+	
+	@RequestMapping("/showtrips")
+		public String showtrips(Model model) {
+		List<Trip> tripList = tripSer.findAllTrips();
+		model.addAttribute("trips", tripList);
+		return "tripshs.jsp";
+	} 
 }

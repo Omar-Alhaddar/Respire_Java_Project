@@ -97,9 +97,16 @@ public class Users {
     }
 //    ******** Trip form ***********
 
+//  @RequestMapping("/trips")  
+//  public String tripForm(@ModelAttribute("trip")Trip trip) {
+//    return "createtrip.jsp";
+//  }
   @RequestMapping("/trips")  
+
   public String tripForm(@ModelAttribute("trip")Trip trip) {
-    return "trips.jsp";
+    return "trips.jsp";}
+  public String test(@ModelAttribute("trip")Trip trip) {
+    return "test.jsp";
   }
   @RequestMapping(value = "/createTrip", method = RequestMethod.POST)
   public String createTrip(@Valid @ModelAttribute("trip") Trip trip, BindingResult result, Model model) {
@@ -120,6 +127,34 @@ public class Users {
       tripSer.creatTrip(trip);
       return "redirect:/trips";
   }
+ 
+ 
+//********the end of Trip ********  
+  
+//  *******Create Events***********************
+@RequestMapping("/events")  
+public String eventForm(@ModelAttribute("event")Event event) {
+  return "createEvent.jsp";
+}
+  @RequestMapping(value = "/createEvent", method = RequestMethod.POST)
+  public String createEvent(@Valid @ModelAttribute("event") Event event, BindingResult result, Model model) {
+      Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+      if (principal instanceof UserDetails) {
+          String username = ((UserDetails) principal).getUsername();
+          model.addAttribute("username", username);
+
+      }
+      if (result.hasErrors()) {
+          return "createtrip.jsp";
+
+      }
+  eventSer.creatEvent(event);
+  return "redirect:/events";
+}
+//  
+//  ********************the end of Event***********
+  
   @RequestMapping("/logout")  
   public String x1(HttpSession session) {
 	  if(session.getAttribute("currentUser") != null) {

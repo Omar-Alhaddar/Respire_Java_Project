@@ -98,6 +98,8 @@ public class Users {
 //    ******** Trip form ***********
 
 
+
+
   @RequestMapping("/trips")  
   public String test(@ModelAttribute("trip")Trip trip) {
     return "test.jsp";
@@ -180,6 +182,7 @@ public String eventForm(@ModelAttribute("event")Event event) {
 		return "eventsh.jsp";
 	}
 	
+
 	@RequestMapping("/showtrips")
 		public String showtrips(Model model) {
 		List<Trip> tripList = tripSer.findAllTrips();

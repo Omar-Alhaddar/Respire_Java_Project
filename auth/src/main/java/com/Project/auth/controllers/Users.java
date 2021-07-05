@@ -97,14 +97,8 @@ public class Users {
     }
 //    ******** Trip form ***********
 
-//  @RequestMapping("/trips")  
-//  public String tripForm(@ModelAttribute("trip")Trip trip) {
-//    return "createtrip.jsp";
-//  }
   @RequestMapping("/trips")  
 
-  public String tripForm(@ModelAttribute("trip")Trip trip) {
-    return "trips.jsp";}
   public String test(@ModelAttribute("trip")Trip trip) {
     return "test.jsp";
   }
@@ -185,5 +179,6 @@ public String eventForm(@ModelAttribute("event")Event event) {
 		model.addAttribute("events", eventList);
 		return "tripsh.jsp";
 	}
+	
   
 }

@@ -7,7 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import com.Project.auth.models.Event;
 
+
+
 @Repository
 public interface EventRepository extends CrudRepository<Event,Long>{
-List<Event>findAll();
+List<Event> findAll();
 }
+

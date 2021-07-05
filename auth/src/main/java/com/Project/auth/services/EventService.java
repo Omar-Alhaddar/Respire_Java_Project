@@ -7,13 +7,16 @@ import org.springframework.stereotype.Service;
 
 import com.Project.auth.repositories.EventRepository;
 import com.Project.auth.repositories.UserEventRepository;
+
 import com.Project.auth.models.Event;
 import com.Project.auth.models.User;
 
 @Service
 public class EventService {
-@Autowired
-private EventRepository eveRepo;
+	private final EventRepository eveRepo;
+	public EventService(EventRepository eveRepo) {
+		this.eveRepo = eveRepo;
+		}
 @Autowired
 private UserEventRepository usereventRepo;
 
@@ -42,5 +45,9 @@ public void unJoinEvent(User user,Event event) {
 	users.remove(user);
 	eveRepo.save(event);
 }
+
+
+
+
 
 }

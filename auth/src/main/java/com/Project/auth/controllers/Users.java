@@ -28,6 +28,7 @@ import com.Project.auth.services.UserService;
 import com.Project.auth.validator.UserValidator;
 
 
+
 @Controller
 public class Users {
 	@Autowired
@@ -36,6 +37,7 @@ public class Users {
 	private EventService eventSer;
 	 private UserService userService;
 	 private UserValidator userValidator;
+	 
 	    
 	    
 	 public Users(UserService userService, UserValidator userValidator) {
@@ -97,7 +99,7 @@ public class Users {
 
   @RequestMapping("/trips")  
   public String tripForm(@ModelAttribute("trip")Trip trip) {
-    return "createtrip.jsp";
+    return "trips.jsp";
   }
   @RequestMapping(value = "/createTrip", method = RequestMethod.POST)
   public String createTrip(@Valid @ModelAttribute("trip") Trip trip, BindingResult result, Model model) {
@@ -140,6 +142,13 @@ public class Users {
 		model.addAttribute("attendees", event.getUsers());
 		
 		return "ShowEvent.jsp";
+	}
+	
+	@RequestMapping("/showtrips")
+		public String showtrips(Model model) {
+		List<Event> eventList = eventSer.findAllEvents();
+		model.addAttribute("events", eventList);
+		return "tripsh.jsp";
 	}
   
 }

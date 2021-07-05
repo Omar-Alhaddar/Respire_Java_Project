@@ -261,7 +261,7 @@
           <form:input type="number" path="price" />
         </div>
         <div class="item">
-          <p> Trip Capacity</p>
+          <p> Event Capacity</p>
           <form:input type="number" path="capacity" />
         </div>
         

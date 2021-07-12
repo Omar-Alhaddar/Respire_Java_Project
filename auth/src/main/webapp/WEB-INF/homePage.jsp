@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Business Casual - Start Bootstrap Theme</title>
+        <title>Home Page</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -201,7 +201,7 @@ http://stackoverflow.com/a/34696029/383904
       
       h1 {
         font-size: 4rem;
-        color: #fff;
+        color: #cc9911;
         position: absolute;
         left: 50%;
         top: 10%;
@@ -326,7 +326,7 @@ http://stackoverflow.com/a/34696029/383904
       @media(max-height: 700px) {
         .button {
             padding-top: 5px;
-          top: 100%;
+        
         }
       }
       a{
@@ -365,18 +365,18 @@ http://stackoverflow.com/a/34696029/383904
             margin: 0px;
         "
         >
-             <a href="index.html">   <img   src="assets/img/project_logo.png" alt="Here is an inage" > </a>
+             <a href="/home">   <img   src="assets/img/project_logo.png" alt="Here is an image" > </a>
              
                 <div class="container">
-                    <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
+                   
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/">Home</a></li>
                           
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/login">Sgin Up</a></li>
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/logout">Logout</a></li>
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/login">Sign Up</a></li>
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#categories">Categories</a></li>
                             <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
                         </ul>
        
@@ -394,7 +394,7 @@ http://stackoverflow.com/a/34696029/383904
           
             <div class="slider">
               <div class="xo">
-                <img src="assets/img/products-02.jpg"> 
+                <img src="assets/img/xm.png"> 
                   </div>
               <div class="xo">
             <img src="assets/img/bg.jpg">                  </div>
@@ -402,7 +402,7 @@ http://stackoverflow.com/a/34696029/383904
                 <img src="assets/img/nye-thumbnail3.jpg"> 
                   </div>
               <div class="xo">
-                <img src="assets/img/bg.jpg"> 
+                <img src="assets/img/kk.jpg"> 
                   </div>
                 
             </div>
@@ -414,7 +414,7 @@ http://stackoverflow.com/a/34696029/383904
               <div><a href="#s2"></a><a href="#s4"></a></div>
               <div><a href="#s3"></a><a href="#s1"></a></div>
             </div>
-          
+    
             <div class="bullets">
               <a href="#s1">1</a>
               <a href="#s2">2</a>
@@ -428,7 +428,7 @@ http://stackoverflow.com/a/34696029/383904
         
 
         
-        <div class="container1">
+        <div id="categories" class="container1">
             <div class="split left">
                 <h1>Trips And Hikes</h1>
                 <h4>Nature can be the best medicine. Study after study has shown that it’s<br> simply better for us to be surrounded by     
@@ -438,8 +438,9 @@ http://stackoverflow.com/a/34696029/383904
                  then you can join us on a hike,<br> there you will improve your trip planning, lightweight backpacking<br> techniques,
                   and improving your wilderness skill set.</h4>
     
-              <a href="#" class="button" style="
-    margin-top: -154px;
+              <a href="/showevents" class="button" style="
+    margin-top: 100px;
+    padding:10px;
 ">Show All</a>
             </div>
             <div class="split right">
@@ -448,8 +449,9 @@ http://stackoverflow.com/a/34696029/383904
                    Consider joining a night party that is organised by our valuable clients, and approved by us.<br>
                    You also have the option to join a formal event or a gathering if available.</h4>
               <p></p>
-              <a href="#" class="button" style="
-    margin-top: -154px;
+              <a href="/showtrips" class="button" style="
+    margin-top: 100px;
+    padding:10px;
 ">Show All</a>
           </div>
         </div>

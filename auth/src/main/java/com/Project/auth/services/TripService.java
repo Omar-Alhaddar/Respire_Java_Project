@@ -1,6 +1,7 @@
 package com.Project.auth.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,13 @@ public List<Trip> findAllTrips(){
 	return triprepo.findAll();
 	}
 
-public Trip FindTripById(Long id) {
-	Trip trip=triprepo.findById(id).orElse(null);
-	return trip;
+//public Optional<Trip> FindTripById(Long id) {
+//	
+//	return Optional.of(triprepo.findById(id).orElse(null));
+//}
+public Trip findTripById(Long id) {
+    Trip trip=triprepo.findById(id).orElse(null);
+    return trip;
 }
 
 public Trip creatTrip(Trip t) {

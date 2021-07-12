@@ -15,11 +15,35 @@ pageEncoding="UTF-8"%>
      
 </head>
 <body>
-<div class="nav">
-    <a href="#" class="menu-activator"><i class="ion-ios-more"></i></a>
-    <i class="ion-cube"></i>
-    <a href="#" class="white link"><i class="ion-ios-redo-outline"></i><i class="ion-ios-redo hidden"></i></a>
-  </div>
+   <header>
+     
+             
+            <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="
+         background-color: rgb(0, 0, 0);
+            /* background-image: linear-gradient(45deg, rgba(228, 0, 228, 0.651), transparent); */
+            height: 90px;
+            margin: 0px;
+        "
+        >
+             <a href="index.html">   <img   src="assets/img/project_logo.png" alt="Here is an inage" > </a>
+             
+                <div class="container">
+                   
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/">Home</a></li>
+                          
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/login">Sgin Up</a></li>
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/logout">Logout</a></li>
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
+                        </ul>
+       
+                    </div>
+                </div>
+            </nav>
+        </header>
   <div class="container">
     <div class="inner">
       <div class="panel panel-left">
@@ -32,8 +56,8 @@ pageEncoding="UTF-8"%>
         <div class="panel-content">
           <div class="form">
             <%--  <p><form:errors path="user.*"/></p> --%>
-                    <form:form class="sign-back" method="POST" action="/createTrip" modelAttribute="trip">
-                    <form:hidden value = "${username}" path="host" />  
+                    <form:form class="sign-back" method="POST" action="/addall" modelAttribute="trip"  enctype="multipart/form-data">
+                    <form:hidden value = "${keko}" path="host" />  
                     <h1>Create your Trip</h1>
             <div class="group">      
                 <p>
@@ -80,8 +104,8 @@ pageEncoding="UTF-8"%>
             </div>
             <div class="group">      
                 <p>
-                   <%--  <form:label path="img">Download a photo:</form:label> --%>
-                    <form:input type="file" path="img" placeholder="Download a photo:"/> 
+                  
+                  <input type="file" name="image" path="img" accept="image/png, image/jpeg" />
                 </p>
               <span class="highlight"></span>
             </div>

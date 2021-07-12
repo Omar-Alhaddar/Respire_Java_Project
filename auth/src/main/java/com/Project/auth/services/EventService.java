@@ -23,7 +23,7 @@ private UserEventRepository usereventRepo;
 public List<Event> findAllEvents(){
 	return eveRepo.findAll();
 	}
-public Event FindEventById(Long id) {
+public Event findEventById(Long id) {
 	Event event=eveRepo.findById(id).orElse(null);
 	return event;
 }

@@ -12,13 +12,11 @@
 
 </head>
  <body>
-<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-<div class="container" id="container" style="min-height: 720px;">
+<div class="container" id="container" style="min-height: 600px;">
 	<div class="form-container sign-up-container">
 		<form:form method="POST" action="/registration" modelAttribute="user">
 			<h1>Create Account</h1>
             <p><form:errors path="user.*"/></p>
-			<span>or use your email for registration</span>
 			<p>
                 <form:label path="username">Username:</form:label>
                 <form:input path="username"/>
@@ -35,14 +33,14 @@
                 <form:label path="passwordConfirmation">Password Confirmation:</form:label>
                 <form:password path="passwordConfirmation"/>
             </p>
-			<button type="submit">Sign Up</button>
+			<button id="signup" type="submit">Sign Up</button>
         </form:form>
 	</div>
 	<div class="form-container sign-in-container">
 	 <c:if test="${logoutMessage != null}">
         <c:out value="${logoutMessage}"></c:out>
     </c:if>
-    <h1>Login</h1>
+    <h1 style= "text-align :center; margin-bottom : 30%;">Login</h1>
     <c:if test="${errorMessage != null}">
         <c:out value="${errorMessage}"></c:out>
     </c:if>
@@ -56,7 +54,7 @@
             <input type="password" id="password" name="password"/>
         </p>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <input type="submit" value="Login!"/>
+        <button id="login" type="submit">Login!</button>
     </form>
 	</div>
 	<div class="overlay-container">

@@ -18,9 +18,7 @@ public class UserEvent {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
-	    @Column(updatable=false)
-	    private Date createdAt;
-	    private Date updatedAt;
+	 
 //	    relations................
 	    @ManyToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name="user_id")
@@ -41,22 +39,7 @@ public class UserEvent {
 			this.id = id;
 		}
 
-		public Date getCreatedAt() {
-			return createdAt;
-		}
-
-		public void setCreatedAt(Date createdAt) {
-			this.createdAt = createdAt;
-		}
-
-		public Date getUpdatedAt() {
-			return updatedAt;
-		}
-
-		public void setUpdatedAt(Date updatedAt) {
-			this.updatedAt = updatedAt;
-		}
-
+		
 		public User getUser() {
 			return user;
 		}

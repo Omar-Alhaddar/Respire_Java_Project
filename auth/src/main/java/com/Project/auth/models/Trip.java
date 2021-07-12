@@ -1,5 +1,6 @@
 package com.Project.auth.models;
 
+import java.beans.Transient;
 import java.util.Date;
 import java.util.List;
 
@@ -32,13 +33,13 @@ public class Trip {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 3, max = 100)
     private String name;
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 3, max = 100)
     private String city;
 	@NotNull
-	@Size(min = 5, max = 200)
+	@Size(min = 3, max = 200)
     private String description;
 	@NotNull
 	@Min(10)
@@ -49,6 +50,7 @@ public class Trip {
     @Future
 	@DateTimeFormat(pattern="yyyy-MM-dd")  
     private Date date;
+    
     private String img;
     @Column(updatable=false)
     private Date createdAt;
@@ -75,6 +77,12 @@ public class Trip {
     }
     public Trip() {
 }
+    @Transient
+    public String getPhotosImagePath() {
+        if (img == null || id == null) return null;
+         
+        return "/user-photos/" + id + "/" + img;
+    }
     
 	public String getCity() {
 		return city;

@@ -11,11 +11,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Business Casual - Start Bootstrap Theme</title>
+        <title>Create Trip/Hike</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/omar.css" rel="stylesheet" />
         <link rel="stylesheet/less" type="text/css" href="scss/bootstrap/kk.scss" />
         <link rel="stylesheet/less" type="text/css" href="scss/bootstrap/kk.scss" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -25,7 +25,10 @@
 
         <style>
            
-      
+
+body{
+background-image:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/bg5.jpg")
+}
       html, body {
       min-height: 100%;
       }
@@ -38,6 +41,8 @@
       color: #666;
       line-height: 22px;
       }
+
+    
       h1 {
       position: absolute;
       margin: 0;
@@ -53,11 +58,12 @@
       padding: 20px;
       }
       form {
-      width: 100%;
+      width: 50%;
       padding: 20px;
       border-radius: 6px;
       background: #fff;
-      box-shadow: 0 0 20px 0 #a82877; 
+      box-shadow: 0 0 20px 0 #c91; 
+      
       }
       .banner {
       position: relative;
@@ -76,34 +82,38 @@
       height: 100%;
       }
       input, textarea, select {
-      margin-bottom: 10px;
+
       border: 1px solid #ccc;
       border-radius: 3px;
       }
       input {
-      width: calc(100% - 10px);
+      width:370px;
       padding: 5px;
       }
       select {
-      width: 100%;
+      width:370px;	
       padding: 7px 0;
       background: transparent;
       }
       textarea {
-      width: calc(100% - 12px);
+      width:370px;
       padding: 5px;
       }
       .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color: #a82877;
+      color: #c91;
       }
       .item input:hover, .item select:hover, .item textarea:hover {
       border: 1px solid transparent;
-      box-shadow: 0 0 6px 0 #a82877;
-      color: #a82877;
+      box-shadow: 0 0 6px 0 #c91;
+      color: #c91;
       }
       .item {
       position: relative;
       margin: 10px 0;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      
       }
       input[type="date"]::-webkit-inner-spin-button {
       display: none;
@@ -153,8 +163,8 @@
       display: block;
       }
       input[type=radio]:checked + label.radio:before {
-      border: 2px solid #a82877;
-      background: #a82877;
+      border: 2px solid #c91;
+      background: #c91;
       }
       label.radio:after {
       content: "";
@@ -181,13 +191,13 @@
       padding: 10px;
       border: none;
       border-radius: 5px; 
-      background: #274134;
+      background: #666;
       font-size: 16px;
       color: #fff;
       cursor: pointer;
       }
       button:hover {
-      background: #bf1e81;
+      background: #c91;
       }
       @media (min-width: 568px) {
       .name-item, .city-item {
@@ -202,13 +212,12 @@
       width: calc(50% - 8px);
       }
       }
-    
         </style>
     </head>
     <body>
       
         <!-- Navigation-->
-        <header>
+     <header>
      
              
             <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="
@@ -218,17 +227,14 @@
             margin: 0px;
         "
         >
-             <a href="index.html">   <img   src="assets/img/project_logo.png" alt="Here is an inage" > </a>
+             <a href="/home">   <img   src="assets/img/project_logo.png" alt="Here is an inage" > </a>
              
                 <div class="container">
-                    <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        
+                         <h2 style= "color:white">Create new Trip/Hike</h2>
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                          
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/login">Sgin Up</a></li>
+                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/home">Home</a></li>
                             <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/logout">Logout</a></li>
                             <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
                         </ul>
@@ -240,15 +246,13 @@
     <!--   addd here -->
 
     <body>
-    <div class="testbox">
+    <div class="testbox" >
         <form:form class="sign-back" method="POST" action="/createTrip" modelAttribute="trip">
-         <form:hidden value = "${username}" path="host" /> 
-         <div class="banner" style="background-image: url(https://www.traveldailynews.com/assets/thumbnails/5e/5efbfa66c99e09e7f00638316303d1f3.jpg);">
-          <h1>Made your own Trip with Respire</h1>
-        </div> 
+         <form:hidden value = "${keko}" path="host" /> 
+  
         <div class="item">
-            <p>The name of your Trip</p>
-            <form:input type="text" path="name"  placeholder="Name your Trip"/>
+            <p >The name of your Trip</p>
+            <form:input style="display:inline" type="text" path="name"/>
           </div>
         
         
@@ -267,13 +271,18 @@
         
         <div class="item">
           <p>City</p>
-          <form:input type="text" path="city" />
+     
+      <form:select id="pass" class="input"  path="city">
+   	
+   <c:forEach items="${city}" var="c">
+    <form:option value="${c}"><c:out value="${c}"/> </form:option>
+    </c:forEach>
+	</form:select>
         </div>
 
 <div class="item">
           <p>Date of Trip</p>
           <form:input type="date" path="date" /> 
-          <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="item">
           <p>Download a photo</p>

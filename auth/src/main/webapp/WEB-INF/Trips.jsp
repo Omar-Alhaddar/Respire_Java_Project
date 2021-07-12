@@ -67,7 +67,7 @@ pageEncoding="UTF-8"%>
             <div class="group">      
                 <p>
                     <%-- <form:label path="price">The Price:</form:label> --%>
-                    <form:input type="text" path="city" placeholder="city"/>
+                    <form:input type="text" path="city" placeholder="city" vaule="ramallah"/>
                 </p>
               <span class="highlight"></span>
             </div>

@@ -72,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
+
 p {
   margin-top: 0;
   margin-bottom: 1rem; }
@@ -8172,7 +8173,7 @@ h1, h2, h3, h4, h5,
 
 .heading-section {
   font-size: 28px;
-  color: #000; }
+  color: #cb9811; }
 
 .img {
   background-size: cover;
@@ -8191,7 +8192,7 @@ h1, h2, h3, h4, h5,
   box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
   text-align: center; }
   .table thead.thead-primary {
-    background: #6807f9; }
+    background: #cc9911; }
   .table thead th {
     border: none;
     padding: 30px;
@@ -8231,12 +8232,12 @@ h1, h2, h3, h4, h5,
     -moz-box-shadow: 0px 12px 20px -6px rgba(0, 0, 0, 0.21);
     box-shadow: 0px 12px 20px -6px rgba(0, 0, 0, 0.21); }
   .btn.btn-primary {
-    background: #6807f9;
-    border-color: #6807f9;
+    background: #cc9911;
+    border-color: #cc9911;
     color: #fff; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
-      border-color: #5305c8 !important;
-      background: #5305c8 !important; }
+      border-color: #cc9911 !important;
+      background: #cc9911 !important; }
     .btn.btn-primary.btn-link {
       background: transparent;
       color: #fff;
